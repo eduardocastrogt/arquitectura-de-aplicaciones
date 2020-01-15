@@ -1,6 +1,8 @@
-﻿namespace Empresa.Ecommerce.Dominio.Entity
+﻿using System;
+
+namespace Empresa.Ecommerce.Application.DTO
 {
-    public class Customeres
+    public class CustomersDTO
     {
         public string CustomerId { get; set; }
         public string CompanyName { get; set; }
@@ -13,6 +15,5 @@
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
-
     }
 }

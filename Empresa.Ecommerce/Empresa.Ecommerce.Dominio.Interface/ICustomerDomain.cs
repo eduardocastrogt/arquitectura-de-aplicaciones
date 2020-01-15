@@ -4,9 +4,9 @@ using System.Text;
 using Empresa.Ecommerce.Dominio.Entity;
 using System.Threading.Tasks;
 
-namespace Empresa.Ecommerce.Infraestructura.Interface
+namespace Empresa.Ecommerce.Dominio.Interface
 {
-    public interface ICustomerRepository
+    public interface ICustomerDomain
     {
         #region Métodos sincronos
         bool Insertar(Customers customers);
@@ -23,6 +23,5 @@ namespace Empresa.Ecommerce.Infraestructura.Interface
         Task<Customers> GetAsync(string customerId);
         Task<IEnumerable<Customers>> GetAllAsync();
         #endregion
-
     }
 }

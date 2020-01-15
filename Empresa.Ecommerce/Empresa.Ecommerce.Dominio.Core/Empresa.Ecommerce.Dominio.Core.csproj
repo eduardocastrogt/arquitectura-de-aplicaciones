@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Empresa.Ecommerce.Dominio.Entity\Empresa.Ecommerce.Dominio.Entity.csproj" />
+    <ProjectReference Include="..\Empresa.Ecommerce.Dominio.Interface\Empresa.Ecommerce.Dominio.Interface.csproj" />
+    <ProjectReference Include="..\Empresa.Ecommerce.Infraestructura.Interface\Empresa.Ecommerce.Infraestructura.Interface.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -19,7 +19,7 @@ namespace Empresa.Ecommerce.Infraestructura.Repository
         }
 
         #region Métodos sincronos
-        public bool Insertar(Customeres customers)
+        public bool Insertar(Customers customers)
         {
             using(var context = _connectionFactory.GetConnection)
             {
@@ -45,7 +45,7 @@ namespace Empresa.Ecommerce.Infraestructura.Repository
             }
         }
 
-        public bool Update(Customeres customers)
+        public bool Update(Customers customers)
         {
             using (var context = _connectionFactory.GetConnection)
             {
@@ -86,7 +86,7 @@ namespace Empresa.Ecommerce.Infraestructura.Repository
             }
         }
 
-        public Customeres Get(string customerId)
+        public Customers Get(string customerId)
         {
             using(var context = _connectionFactory.GetConnection)
             {
@@ -94,20 +94,20 @@ namespace Empresa.Ecommerce.Infraestructura.Repository
                 var parameters = new DynamicParameters();
                 parameters.Add("@customerId", customerId);
 
-                var customer = context.QuerySingle<Customeres>
+                var customer = context.QuerySingle<Customers>
                     (storedProcedure, parameters, commandType: CommandType.StoredProcedure);
 
                 return customer;
             }
         }
 
-        public IEnumerable<Customeres> GetAll()
+        public IEnumerable<Customers> GetAll()
         {
             using (var context = _connectionFactory.GetConnection)
             {
                 var storedProcedure = "CustomerList";
 
-                var customers = context.Query<Customeres>
+                var customers = context.Query<Customers>
                     (storedProcedure, commandType: CommandType.StoredProcedure);
 
                 return customers;
@@ -116,7 +116,7 @@ namespace Empresa.Ecommerce.Infraestructura.Repository
         #endregion
 
         #region Métodos asincronos
-        public async Task<bool> InsertarAsync(Customeres customers)
+        public async Task<bool> InsertarAsync(Customers customers)
         {
             using (var context = _connectionFactory.GetConnection)
             {
@@ -142,7 +142,7 @@ namespace Empresa.Ecommerce.Infraestructura.Repository
             }
         }
 
-        public async Task<bool> UpdateAsync(Customeres customeres)
+        public async Task<bool> UpdateAsync(Customers customeres)
         {
             using (var context = _connectionFactory.GetConnection)
             {
@@ -183,7 +183,7 @@ namespace Empresa.Ecommerce.Infraestructura.Repository
             }
         }
 
-        public async Task<Customeres> GetAsync(string customerId)
+        public async Task<Customers> GetAsync(string customerId)
         {
             using (var context = _connectionFactory.GetConnection)
             {
@@ -191,20 +191,20 @@ namespace Empresa.Ecommerce.Infraestructura.Repository
                 var parameters = new DynamicParameters();
                 parameters.Add("@customerId", customerId);
 
-                var customer = await context.QuerySingleAsync<Customeres>
+                var customer = await context.QuerySingleAsync<Customers>
                     (storedProcedure, parameters, commandType: CommandType.StoredProcedure);
 
                 return customer;
             }
         }
 
-        public async Task<IEnumerable<Customeres>> GetAllAsync()
+        public async Task<IEnumerable<Customers>> GetAllAsync()
         {
             using (var context = _connectionFactory.GetConnection)
             {
                 var storedProcedure = "CustomerList";
 
-                var customers = await context.QueryAsync<Customeres>
+                var customers = await context.QueryAsync<Customers>
                     (storedProcedure, commandType: CommandType.StoredProcedure);
 
                 return customers;

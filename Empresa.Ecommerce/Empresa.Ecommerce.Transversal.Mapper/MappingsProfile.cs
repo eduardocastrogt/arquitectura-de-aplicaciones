@@ -10,9 +10,9 @@ namespace Empresa.Ecommerce.Transversal.Mapper
         public MappingsProfile()
         {
             CreateMap<Customers, CustomersDTO>().ReverseMap();
-            CreateMap<Customers, CustomersDTO>().ReverseMap()
-                .ForMember(destino => destino.CustomerId, 
-                    source => source.MapFrom(src => src.CustomerId));
+            //CreateMap<Customers, CustomersDTO>().ReverseMap()
+            //    .ForMember(destino => destino.CustomerId, 
+            //        source => source.MapFrom(src => src.CustomerId));
         }
     }
 }
